@@ -1,0 +1,8 @@
+main: me.kikotexan.BoiGui.Main
+name: Dresser
+version: 1.0
+author: kikotexan
+api-version: 1.15
+
+commands:
+  Armor:

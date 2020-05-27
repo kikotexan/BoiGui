@@ -8,27 +8,25 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import io.netty.buffer.ByteBuf;
-import io.netty.handler.codec.http2.Http2Connection.Listener;
-import io.netty.handler.codec.http2.Http2Stream;
+
 import net.md_5.bungee.api.ChatColor;
 
-public class Main extends JavaPlugin implements Listener {
+public class BoiGui extends JavaPlugin implements Listener {
 	
 	public Inventory inv;
 	
 	@Override
 	public void onEnable()  {
-		this.getServer().getPluginManager().registerEvents(this, this);
+		Bukkit.getServer().getPluginManager().registerEvents(this, this);
 		createInv();
 	}
 	
@@ -145,7 +143,6 @@ public class Main extends JavaPlugin implements Listener {
 		return a;
 	}
 	
-	
 	public void createInv() {
 		
 		inv = Bukkit.createInventory(null, 9,ChatColor.GOLD + "" + ChatColor.BOLD + "Give Full Armor Sets");
@@ -200,49 +197,5 @@ public class Main extends JavaPlugin implements Listener {
 		inv.setItem(8, item);
 				
 	}
-
-	@Override
-	public void onGoAwayReceived(int arg0, long arg1, ByteBuf arg2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onGoAwaySent(int arg0, long arg1, ByteBuf arg2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStreamActive(Http2Stream arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStreamAdded(Http2Stream arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStreamClosed(Http2Stream arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStreamHalfClosed(Http2Stream arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStreamRemoved(Http2Stream arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-		
-
 
 }
